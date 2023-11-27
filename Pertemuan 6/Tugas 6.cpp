@@ -1,32 +1,44 @@
 #include <iostream>
+
 using namespace std;
 
-int main() {
-    cout << "=======================================" << endl;
-    cout << "## Cari nilai Tertinggi  ##" << endl;
-    cout << "=======================================" << endl;
+    void garis(){
+    for(int i=0; i<120; ++i){
+        cout << "-";
+    }
+    }
+    int main(){
+    int n,i,nilaiangka,indeks;
+    cout << "\t\t\tMesin Pencari Bilangan Tertinggi\n";
+    garis();
+
+    cout << "\nMasukkan jumlah bilangan : ";
+    cin >> n;
     cout << endl;
 
-    cout << "Nilai: " << endl; // Menampilkan semua darah dari array element
-    int Array[7] = {12, 32, 27, 8, 10, 11, 30};
-    for (int i = 0; i < 7; i++) {
-        cout << "Nilai " << i + 1 << ": " << Array[i] << endl;
+    int nilai[n];
+    for(i=0; i<n; ++i){
+
+        cout << "Masukkan bilangan ke - " << i << " = ";
+        cin >> nilai[i];
+
     }
 
-    int nilaitertinggi = Array[0];
-    int index = 0;
+    nilaiangka=nilai[0];
+    indeks=0;
 
-    for (int i = 1; i < 7; i++) {     // Mencari nilai tertinggi dengan indexnya
-        if (Array[i] >  nilaitertinggi) {
-             nilaitertinggi = Array[i];
-            index = i;
+    //Mencari nilai tertinggi dalam array
+    for(i=0; i<n; ++i){
+        if(nilaiangka<nilai[i]){
+        nilaiangka=nilai[i];
+        indeks=i;
         }
     }
-
-    cout << endl;
-
-    cout << "nilai tertinggi: " <<  nilaitertinggi << endl;     // Menampilkan hasil darah tertinggi beserta indexnya
-    cout << "Index dari nilai tertinggi: " << index << endl;
+    //menampilkan nilai tertinggi
+    cout << "\nNilai tertingginya adalah "
+    << nilaiangka << " yang berada pada indeks ke  "
+    << indeks << endl;
+    garis();
 
     return 0;
 }
